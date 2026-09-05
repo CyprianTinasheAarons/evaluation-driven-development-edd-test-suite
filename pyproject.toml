@@ -1,0 +1,33 @@
+[build-system]
+requires = []
+build-backend = "build_backend"
+backend-path = ["."]
+
+[project]
+name = "edd-eval"
+version = "0.1.0"
+description = "A deterministic, extensible evaluation-driven development harness for AI systems."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "EDD contributors" }]
+keywords = ["evaluation", "llm", "rag", "testing", "regression"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+]
+
+[project.optional-dependencies]
+langchain = ["langchain-core>=0.3", "langsmith>=0.3.13"]
+deepeval = ["deepeval>=4.2"]
+all = ["langchain-core>=0.3", "langsmith>=0.3.13", "deepeval>=4.2"]
+
+[project.scripts]
+edd-eval = "edd_eval.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
