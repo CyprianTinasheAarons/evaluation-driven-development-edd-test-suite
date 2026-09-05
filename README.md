@@ -148,6 +148,32 @@ run = Evaluator(metrics=default_metrics()).evaluate(examples, system)
 `edd_eval.reporting.write_json`, `write_markdown`, and
 `edd_eval.integrations.export_langsmith_jsonl` for storage/export.
 
+## What problems does this help solve?
+
+The suite helps teams address these 15 recurring problems in AI application
+development:
+
+1. No repeatable AI evaluation process.
+2. Missing or inconsistent golden datasets.
+3. Invalid dataset records and duplicate test cases.
+4. Non-reproducible evaluation samples.
+5. Answer-quality regressions between releases.
+6. Retrieval recall failures.
+7. Retrieval precision and irrelevant-context problems.
+8. Unsupported or hallucinated answers.
+9. Answers that do not address the question.
+10. Inconsistent output formats from AI systems.
+11. Difficulty evaluating LangChain chains and agents.
+12. Difficulty using DeepEval metrics in one evaluation pipeline.
+13. Lack of per-example scores and explanations.
+14. No machine-readable or human-readable evaluation reports.
+15. No automated CI quality gate for model changes.
+
+The core framework is functional for deterministic evaluation and provider
+adapter workflows. Semantic model judging, native Ragas/ARES execution, async
+evaluation, agent trajectory scoring, and direct LangSmith experiment uploads
+remain extension areas rather than built-in behavior.
+
 ## Development
 
 ```bash
