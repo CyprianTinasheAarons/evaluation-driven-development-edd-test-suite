@@ -9,7 +9,7 @@ from pathlib import Path
 
 from .comparison import compare_runs, summarize_run
 from .dataset import DatasetError, load_dataset, sample_dataset
-from .evaluator import Evaluator
+from .evaluator import EvaluationError, Evaluator
 from .reporting import read_run, write_json, write_markdown
 from .systems import CallableSystem
 
